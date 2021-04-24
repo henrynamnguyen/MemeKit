@@ -52,7 +52,7 @@ class Upload(Resource):
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=True)
         with open("temp.mp4") as f:
             f.write(predictions)
-            return Response(predictions, mimetype="video/mp4")
+            return Response(f, mimetype="video/mp4")
 
 api.add_resource(Upload,"/Upload")
 
