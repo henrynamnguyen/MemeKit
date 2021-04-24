@@ -49,7 +49,7 @@ class Upload(Resource):
         
         #perform image processing 
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=True)
-        with open("temp.mp4") as f:
+        with open("temp.mp4","wb") as f:
             f.write(predictions)
             return Response(f, mimetype="video/mp4")
 
