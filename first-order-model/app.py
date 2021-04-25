@@ -26,7 +26,8 @@ class Upload(Resource):
     def post(self):
         #get the url of users' images
         user_data = request.get_json()
-        image_url = user_data["image_url"]
+        image_url = str(user_data["image_url"])
+        image_url = image_url.remove("s","",1) #make https into http so imageio can run
         
         #load images and the blueprint videos
         source_image = imageio.imread(image_url)
