@@ -46,7 +46,7 @@ class Upload(Resource):
  
         #load checkpoints
         generator, kp_detector = load_checkpoints(config_path='config/vox-256.yaml', 
-                                checkpoint_path='http://storage.googleapis.com/memekit-checkpoint/vox-cpk.pth.tar')
+                                checkpoint_path='https://storage.googleapis.com/memekit-checkpoint/vox-cpk.pth.tar')
         
         #perform image processing 
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=True)
