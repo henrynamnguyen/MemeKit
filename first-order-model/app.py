@@ -50,7 +50,7 @@ class Upload(Resource):
         #perform image processing 
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=True)
         
-        return Response(f, mimetype="video/mp4")
+        return Response(predictions, mimetype="video/mp4")
 
 api.add_resource(Upload,"/Upload")
 
