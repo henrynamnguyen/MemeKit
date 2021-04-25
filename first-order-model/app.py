@@ -31,7 +31,7 @@ class Upload(Resource):
         
         #load images and the blueprint videos
         source_image = imageio.imread(image_url)
-        reader = imageio.get_reader("https://storage.googleapis.com/memekit-blueprint-videos/nhatnam2.mp4")
+        reader = imageio.get_reader("http://storage.googleapis.com/memekit-blueprint-videos/nhatnam2.mp4")
         source_image = resize(source_image, (256, 256))[..., :3]
 
         fps = reader.get_meta_data()['fps']
