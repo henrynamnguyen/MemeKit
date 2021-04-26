@@ -57,8 +57,8 @@ class Upload(Resource):
         
         return Response(predictions, mimetype="video/mp4")
 
-api.add_resource(Upload,"/Upload")
+api.add_resource(Upload,"/ppload")
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True)
 
