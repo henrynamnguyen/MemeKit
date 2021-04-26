@@ -26,11 +26,14 @@ class Upload(Resource):
     def post(self):
         #get the url of users' images
         user_data = request.get_json()
-        image_url = str(user_data["image_url"])
-        image_url = image_url.remove("s","",1) #make https into http so imageio can run
+        image_data = str(user_data["image_url"])
+        image = image_data.content
+        f = open("temp.jpg","wb")
+        f.write(image_da)
+        f.close()
         
         #load images and the blueprint videos
-        source_image = imageio.imread(image_url)
+        source_image = imageio.imread("temp.jpg")
         reader = imageio.get_reader("http://storage.googleapis.com/memekit-blueprint-videos/nhatnam2.mp4")
         source_image = resize(source_image, (256, 256))[..., :3]
 
@@ -50,6 +53,7 @@ class Upload(Resource):
         
         #perform image processing 
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=True)
+        
         
         return Response(predictions, mimetype="video/mp4")
 
