@@ -11,9 +11,10 @@ scipy==1.1.0
 torch ==1.0.0
 torchvision==0.2.1
 tqdm==4.24.0
-Flask
-flask-restful
-pymongo
-requests
-google-cloud-storage
-subprocess
+Flask==1.1.2
+flask-restful==0.3.8
+pymongo==3.11.13
+requests==2.25.1
+google-cloud-storage==1.38.0
+google-cloud-vision==2.3.1
+
