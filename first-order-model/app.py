@@ -24,7 +24,7 @@ UserDB = client["UserDB"]
 User = UserDB["User"]
 
 ALLOWED_FORMAT = ['png','jpeg','jpg']
-FILE_PATH = '/MemeKit/first-order-model/'
+FILE_PATH = 'home/ngnhatnam188/MemeKit/first-order-model/'
 
 def process_image(song_selected):
     subprocess.run('python3 demo.py --config config/vox-256.yaml --driving_video blueprint_videos/{}.mp4 --source_image temp.jpeg --checkpoint vox-cpk.pth.tar --result_video temp_files/output.mp4 --relative --adapt_scale'.format(song_selected), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell = True)
